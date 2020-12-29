@@ -1,4 +1,4 @@
-# Changes to WTUTOR.DWS made in 2020-12
+# Changes in WTUTOR.DWS made in 2020-12
 
 ## Code
 
