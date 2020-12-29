@@ -1,0 +1,31 @@
+ TOPIC;MSG;Topics;Tutor;⎕ML;⎕IO;L;FW;GAP;⎕WX;∆T;∆TITLE;∆LAST;∆BOOK
+ ⎕IO←1 ⋄ ⎕ML←1 ⋄ ⎕WX←1
+ FW←700
+ '.'⎕WS'Font' 'Verdana' 20
+ MAKE_Tutor
+ 'Topics'⎕WC'FORM'('Dyalog APL/W GUI Tutorials (',(⍕⍴∆BOOKS),')')('Size' 600 FW)('Coord' 'Pixel')('Event' 'Close' 1)('Posn'∆POSN)
+ 'Topics.List'⎕WC'LIST'('ITEMS'GetTOC 1)(0 0)(100 100)('EVENT' 'MouseDblCLick' 'DO_TOPIC')('SELITEMS'((⍴∆TOPICS)↑1))('Attach'('Top' 'Left' 'Bottom' 'Right'))
+ Topics.List.Coord←'Prop'
+ Topics.List.Size←100 100
+ Topics.List.Coord←'Pixel'
+ 'Topics.FilterLabel'⎕WC'LABEL' '&Filter:'(7 5)('Attach'(4⍴'Top' 'Left'))
+ 'Topics.Filter'⎕WC'Edit' ''(5,5+2⊃+⌿↑Topics.FilterLabel.(Posn Size))(⍬ 160)('FontObj'⎕SE.FontObj)('Attach'(4⍴'Top' 'Left')),(15<⊃(//)⎕VFI{⍵/⍨2>+\'.'=⍵}2⊃# ⎕WG'APLVersion')/⊂'HasClearButton' 1
+ Topics.Filter.TipObj←⎕NEW⊂'TipField'
+ Topics.Filter.Tip←'Search is not case sensitive' 'Press Ctrl+Backspace to clear field'
+ Topics.(List Filter).FontObj←⊂⎕SE.FontObj
+ Topics.Filter.onKeyPress←'OnKeyPressInFilter'
+ Topics.Filter.onMouseUp←'OnMouseUpInFilter'
+ Topics.Filter.on9999←'On9999InFilter'
+ Topics.Filter.Size[1]←Topics.Filter.Size[1]-⌊0.15×Topics.Filter.Size[1]
+ Topics.List.Posn[1]←Topics.List.Posn[1]+5+1⊃+⌿↑Topics.Filter.(Posn Size)
+ GAP←⌊(FW-2×80)÷3
+ 'Topics.OK'⎕WC'BUTTON' '&OK'(⍬ ⍬)(⍬ 80)('Default' 1)('EVENT' 'Select' 'DO_TOPIC')('Attach'(4⍴'Bottom' 'Left'))
+ 'Topics.Cancel'⎕WC'BUTTON' '&Close'(⍬ ⍬)(⍬ 80)('Cancel' 1)('Event' 'Select' 1)('Attach'(4⍴'Bottom' 'Left'))
+ Topics.(OK Cancel).Coord←⊂'Pixel'
+ Topics.OK.Posn←(Topics.Size[1]-15+Topics.OK.Size[1]),15
+ Topics.Cancel.Posn←(Topics.OK.Posn[1]),15+2⊃+⌿↑Topics.OK.(Size Posn)
+ Topics.List.Size[1]←Topics.Size[1]-30+Topics.OK.Size[1]+5+1⊃↑+⌿Topics.Filter.(Posn Size)
+ Topics.(FilterLabel Filter List OK Cancel).TabIndex←⍳5
+ 'Topics.List'DQ'.'
+ ∆POSN←Topics.Posn
+⍝Done

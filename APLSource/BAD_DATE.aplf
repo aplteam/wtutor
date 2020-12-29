@@ -1,0 +1,8 @@
+ R←BAD_DATE MSG;TXT;M
+ :If '#.TEST.C'≢⍕3⊃MSG
+     TXT←(⊃MSG).Text
+     'M'⎕WC'MsgBox' 'Invalid Date'TXT('Style' 'Error')
+     ⎕DQ'M'
+     ⎕NQ(⊃MSG)'GotFocus'
+ :EndIf
+ R←0

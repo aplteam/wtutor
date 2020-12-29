@@ -1,0 +1,16 @@
+ {r}←EditBook no;Book;B;X
+⍝ `no` is an item number pointing to on entry in global `BOOK`.
+⍝ This function produces a single editable variable and puts it into ⎕ED, allowing you to
+⍝ edit it. After having edited it is putting it back into the global vars.
+ r←⍬
+ ⎕PW←74
+ B←DETRAIL¨¨↓¨Book←no⊃∆BOOKS
+ B←(⍳⍴B){(⊂80↑'∇ Lesson ',(⍕⍺),' ',(⎕PW-2)⍴'-'),⍵}¨B
+ B←⊃,/B
+Edit:⎕ED'B'
+ B←DETRAIL¨B
+ X←'∇'=⊃¨B
+ B←1↓¨X⊂B
+ B←(⊃,/0<⍴¨B)/B
+ Book←↑¨B
+ ∆BOOKS[no]←⊂Book

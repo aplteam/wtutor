@@ -1,0 +1,6 @@
+ r←{NoNumbering}GetTOC bool
+⍝ Create table of contents
+ r←(↓↑∆TOPICS),¨' ',¨((⊂2 0)⍕¨⍴¨∆BOOKS),¨⊂' Lessons'
+ r←((¯2↑¨⍕¨⍳⍴r),¨⊂'. '),¨r
+ r←bool⌿r
+⍝Done

@@ -1,0 +1,7 @@
+ LINE←SETAPLLINE LINE;ALPHA
+ →(0=⍴LINE)/Exit
+ ALPHA←⎕A,⎕D,'abcdefghijklmnopqrstuvwxyz'
+ ALPHA,←' !"£$%^&*()_-=+[{]};:´@#~,<.>/?\∣'
+ →(∧/LINE∊ALPHA)/Exit
+ LINE←DETRAIL'⍎',LINE
+Exit:

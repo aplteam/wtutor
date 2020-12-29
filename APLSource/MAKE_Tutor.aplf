@@ -1,0 +1,31 @@
+ MAKE_Tutor;SINK;APLFONT;Attach;∆;gap
+ ∆←'Form'('Coord' 'Pixel')('Event' 'Close' 'QUIT')('Size' 700 1000)('Posn'∆POSN) ⍝ Value Error?! Run ⍙ReadWTUTOR 1
+ ∆,←('Visible' 0)('Active' 0)
+ 'Tutor'⎕WC ∆
+
+ 'Tutor.G'⎕WC'Grid'('Coord' 'Prop')('Values'(10 2⍴⊂''))('Posn'(0 0))('Size'(100 100))('Attach' 'Top' 'Left' 'Top' 'Right')
+ 'Tutor.G'⎕WS'FCol' 0(255 0 0)
+ 'Tutor.G'⎕WS('TitleHeight' 0)('TitleWidth' 0)
+ 'Tutor.G'⎕WS(⊂'Font'),'⎕SE'⎕WG'Font'
+ Tutor.G.Coord←'Pixel'
+ 'Tutor.G'⎕WS('CellWidths'(40,(Tutor.Size[2]-40)))
+ 'Tutor.G'⎕WS'GridLineWidth' 0
+ 'Tutor.G'⎕WS'CellSelect' 'None'
+
+ Attach←'Attach'('Bottom' 'Left' 'Bottom' 'Left')
+ 'Tutor.EXEC'⎕WC'Button'('Picture' 'Tutor.EXEC.NEXT')('Default' 1)Attach
+ 'Tutor.EXEC.NEXT'⎕WC'BitMap' ''NXT_BMP CMAP
+ 'Tutor.EXEC.EXEC'⎕WC'BitMap' ''EXEC_BMP CMAP
+ 'Tutor.EXEC.END'⎕WC'BitMap' ''END_BMP CMAP
+
+ 'Tutor.QUIT'⎕WC'Button' ''(⍬ ⍬)(30 60)('Picture' 'Tutor.QUIT.BM')('Cancel' 1)('Event' 'Select' 'QUIT')Attach
+ 'Tutor.QUIT.BM'⎕WC'BitMap' ''CANCEL_BMP CMAP
+
+ gap←15
+ Tutor.EXEC.Posn←(Tutor.Size[1]-gap+Tutor.EXEC.Size[1]),gap
+ Tutor.QUIT.Posn←(Tutor.EXEC.Posn[1]),(2×gap)+Tutor.EXEC.Size[2]
+ Tutor.G.Coord←'Pixel'
+ Tutor.G.Size[1]-←(2×gap)+⊃Tutor.EXEC.Size
+
+ SINK←'Tutor'⎕NS'EXECUTE'
+⍝Done

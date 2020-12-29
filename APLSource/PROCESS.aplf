@@ -1,0 +1,10 @@
+ PROCESS;F;X;I
+⍝ Simulates a time-consuming process
+ 'F'⎕WC'Form' 'Processing...'('3D' 'Dialog')('Border' 2)
+ 'F.P'⎕WC'ProgressBar'('Limits' 0 10)
+ 1 ⎕NQ'.' 'Flush'
+ :For I :In ⍳10
+     ⎕DL 0.15
+     F.P.Thumb←I
+ :EndFor
+End:

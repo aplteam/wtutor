@@ -1,0 +1,4 @@
+ {DATA}SHOW1 MSG
+ 'Event message is:'MSG
+ →(0=⎕NC'DATA')/0
+ 'Data (left argument) is:'DATA

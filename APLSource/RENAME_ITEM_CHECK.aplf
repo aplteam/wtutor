@@ -1,0 +1,4 @@
+ R←RENAME_ITEM_CHECK MSG
+⍝ Callback for EndEditLabel event
+⍝ Disallows upper-case characters
+ R←~∨/(4⊃MSG)∊⎕A

@@ -1,0 +1,9 @@
+ NEW_MDI_CHILD MSG;OBJ;PARENT;MDICLIENT;EXISTING;N;NEW;CAPTION
+⍝ Makes a new MDI SubForm
+ OBJ←⍕⊃MSG                          ⍝ Name of MenuItem
+ PARENT←(¯1+OBJ⍳'.')↑OBJ            ⍝ Name of parent Form
+ MDICLIENT←⊃'MDIClient'⎕WN PARENT   ⍝ Name of MDIClient
+ EXISTING←'SubForm'⎕WN MDICLIENT    ⍝ Names of existing SubForms
+ N←1+⌈/⍎¨EXISTING∩¨⊂⎕D              ⍝ Calculate next free number
+ NEW←MDICLIENT,'.',CAPTION←'CF',⍕N  ⍝ Allocate new name
+ NEW ⎕WC'SubForm'CAPTION            ⍝ Create it

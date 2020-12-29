@@ -1,0 +1,11 @@
+ ⍙ReadWTUTOR flag;tno;names;values
+ :If flag                       ⍝ Insurance against accidental call
+     tno←'wtutor.dcf'⎕FTIE 0    ⍝ For this to work the current dir must point to the project folder!
+     ∆TOPICS←⎕FREAD tno 1
+     ∆BOOKS←⎕FREAD tno 2
+     names←⎕FREAD tno 3
+     values←⎕FREAD tno 4
+     names{⍎⍺,'←⍵'}¨values
+     ⎕FUNTIE tno
+ :EndIf
+⍝Done

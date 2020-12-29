@@ -1,0 +1,11 @@
+ {props}MAKE_FORM(name caption size);posn;screenSize;menubarHeight;gap
+⍝ Creates a Form in the lower right corner of the screen.
+⍝ Optional left argument can be used to specify parameters other than Caption, Size and Posn.
+ props←{0<⎕NC ⍵:⍎⍵ ⋄ ''}'props'
+ screenSize←GetSystemMetrics¨17 16
+ menubarHeight←GetSystemMetrics 15
+ gap←20
+ posn←screenSize-size+gap+menubarHeight,0
+ name ⎕WC'Form'('Caption'caption)('Coord' 'Pixel')('Posn'posn)('Size'size),props
+ name ⎕WS'Coord' 'Prop'
+ ⍝Done

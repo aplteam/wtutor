@@ -1,0 +1,7 @@
+[
+   ('Brown')('Manager')('South')(64000)(1)
+   ('Jones')('Project Leader')('South')(43250)(1)
+   ('Green')('Consultant')('South')(45000)('')
+   ('Black')('Programmer')('East')(30000)(1)
+   ('White')('Assistant')('Central')(40000)('')
+]

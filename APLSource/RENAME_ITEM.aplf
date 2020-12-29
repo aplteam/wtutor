@@ -1,0 +1,7 @@
+ RENAME_ITEM;I;⎕IO
+ ⎕IO←1
+ I←F.L.SelItems
+ I←⊃I/⍳⍴I           ⍝ Index of currently selected item
+ :If I≠0            ⍝ Do nothing if no selected item
+     F.L.BeginEditLabel I
+ :EndIf

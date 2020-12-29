@@ -1,0 +1,12 @@
+ LV_SORT MSG;COL;DIR;ITEMS;INDX;INFO;DATA;FN;I
+⍝ Sort ListView on ColumnClick event
+⍝ Sorts down if user clicks with Shift/Ctrl/Alt
+⍝ Sorts up if user clicks unshifted
+ COL←3⊃MSG
+ DIR←1+0≠5⊃MSG
+ ITEMS INDX INFO←(⊃MSG).(Items ImageIndex ReportInfo)
+ DATA←(ITEMS,INFO)[;COL]
+ FN←⍎DIR⊃'⍋⍒'
+ I←FN↑DATA
+ ITEMS←ITEMS[I] ⋄ INFO←INFO[I;] ⋄ INDX←INDX[I]
+ (⊃MSG).(Items ImageIndex ReportInfo)←ITEMS INDX INFO

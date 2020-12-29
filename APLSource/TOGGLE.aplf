@@ -1,0 +1,5 @@
+ TOGGLE MSG;OTHER
+⍝ Toggles the ACTIVE property of the other button
+⍝ ("Chapattis" if MSG[1] is "Nan" and vice versa)
+ OTHER←⊃'MEAL.SUN.NAN' 'MEAL.SUN.CHAP'~MSG[1]
+ OTHER ⎕WS'ACTIVE'(~OTHER ⎕WG'ACTIVE')

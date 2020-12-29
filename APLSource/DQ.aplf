@@ -1,0 +1,4 @@
+ {r}←giveFocusTo DQ this
+ ⎕NQ giveFocusTo'GotFocus'
+ r←⎕DQ this
+⍝Done

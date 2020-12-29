@@ -1,0 +1,20 @@
+ EXECUTE;I;CAPTION;EVENT;PICTURE
+ :If ~COUNT>⍴EXPR
+     I←COUNT⊃EXPR
+     :Trap 0
+         '#'⍎⎕←I⊃TEXT
+     :Else
+         ⎕←1↓⊃⎕DM
+     :EndTrap
+     2 ⎕NQ'G' 'CellChange'I 1 ''
+     2 ⎕NQ'G' 'SetCellType'I 2 1
+     COUNT←COUNT+1
+     :If COUNT≤⍴EXPR
+         I←COUNT⊃EXPR
+         2 ⎕NQ'G' 'CellChange'I 1 '==>'
+         2 ⎕NQ'G' 'SetCellType'I 2 2
+     :Else
+         CAPTION PICTURE EVENT←(1+##.∆LAST<⍴##.∆BOOK)⊃('&End' 'EXEC.END' '##.QUIT')('&Next' 'EXEC.NEXT' '##.NEXT')
+         'EXEC'⎕WS('Picture'PICTURE)('Event' 'Select'EVENT)
+     :EndIf
+ :EndIf

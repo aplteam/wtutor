@@ -1,0 +1,22 @@
+ PROCESS2;F;X;M;I
+⍝ Simulates a time-consuming process
+ 'F'⎕WC'Form' 'Processing...'('Posn' 5 5)
+ F.Event←2001 1
+ 'F.P'⎕WC'ProgressBar'('Limits' 0 10)
+ 'F.CANCEL'⎕WC'Button' 'Cancel'(70 30)(20 40)('Event' 'Select' 1)
+
+ :For I :In ⍳10
+     ⍝ Has cancel been pressed ?
+     ⎕NQ'F' 2001
+     X←⎕DQ'F'
+     :If 'F.CANCEL'≡⊃X
+         'M'⎕WC'MsgBox' 'Abort Processing' 'Please confirm'('Style' 'Query')
+         M ⎕WS'Event' 'All' 1
+         X←⎕DQ'M'
+         →('MsgBtn1'≡2⊃X)/End  ⍝ User confirmed YES
+     :EndIf
+     ⎕DL 1
+     F.P.Thumb←I
+ :EndFor
+
+End:

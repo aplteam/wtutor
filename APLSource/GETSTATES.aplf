@@ -1,0 +1,6 @@
+ GETSTATES
+ :For BUTTON :In ⎕WN'F1.G1'
+     :With BUTTON
+         State
+     :EndWith
+ :EndFor

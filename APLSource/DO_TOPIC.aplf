@@ -1,0 +1,13 @@
+ r←DO_TOPIC;T
+ T←'Topics.List'⎕WG'SELITEMS'
+ T←⊃(T/⍳⍴T),1
+ T←GetItemNumber T⊃Topics.List.Items
+ ∆BOOK←T⊃∆BOOKS
+ ∆TITLE←T⊃∆TOPICS
+ ∆T←T
+ ⎕EX¨(⎕WN'.')~'Topics' 'Tutor'
+ 'Tutor'⎕WS('VISIBLE' 1)('Active' 1)
+ 'Topics'⎕WS('VISIBLE' 0)('Active' 0)
+ ⎕NQ Tutor.G'GotFocus'
+ LESSON 1
+ r←0

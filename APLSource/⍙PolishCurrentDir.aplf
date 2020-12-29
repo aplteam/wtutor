@@ -1,0 +1,12 @@
+ {r}←⍙PolishCurrentDir;wsid
+⍝ If `⎕WSID` is relative this function does nothing.
+⍝ Otherwise the current directory is changed so that it becomes the path part of `⎕WSID`.
+ r←''
+ wsid←{w←⍵ ⋄ (('/'=w)/w)←'\' ⋄ w},⎕WSID
+ :If '.\'≢2⍴wsid,' '
+ :AndIf '\'∊wsid
+     {}⎕SE.UCMD'cd "',({⍵↓⍨-'\'⍳⍨⌽⍵}wsid),'"'
+ :ElseIf 0<#.⎕NC'AcreConfig'
+     {}⎕SE.UCMD'cd "',(¯1↓#.AcreConfig.ProjectFolder),'"'
+ :EndIf
+⍝Done

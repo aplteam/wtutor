@@ -1,0 +1,26 @@
+ LESSON N;T;ACTIVE;EVENT;CAPTION;PICTURE;X;TEXT;EXPR
+ ⍝
+ T←∆TITLE,' : Lesson ',(⍕N),' of ',⍕⍴∆BOOK
+ 'Tutor'⎕WS('Caption'T)
+ TEXT←N⊃∆BOOK
+ EXPR←('⍎'=TEXT[;1])/⍳⊃⍴TEXT
+ TEXT[EXPR;1]←' '
+ TEXT←DETRAIL¨↓TEXT
+ X←(⍴TEXT)⍴⊂''
+ ACTIVE←1
+ :If 0=≢EXPR
+     CAPTION PICTURE EVENT←(1+N<⍴∆BOOK)⊃('&End' 'Tutor.EXEC.END' 'QUIT')('&Next' 'Tutor.EXEC.NEXT' 'NEXT')
+ :Else
+     X[⊃EXPR]←⊂'==>'
+     CAPTION←'&Execute'
+     PICTURE←'Tutor.EXEC.EXEC'
+     EVENT←'Tutor.EXECUTE'
+ :EndIf
+ 'Tutor.EXEC'⎕WS('Picture'PICTURE)('Event' 'Select'EVENT)
+ 'Tutor.G'⎕WS'Values'(X,[1.5]TEXT)
+ 'Tutor.G'⎕WS'CellTypes'(((⍴TEXT),2)⍴1)
+ ⎕NQ'Tutor.G' 'SetCellType'(⊃EXPR)2 2
+ Tutor.TEXT←TEXT
+ Tutor.EXPR←EXPR
+ Tutor.COUNT←1
+ ∆LAST←N

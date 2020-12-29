@@ -1,0 +1,7 @@
+ LX;BMPDIR
+ ⎕IO←1
+ ⎕ML←1
+ ⎕DIV←1
+ ⎕EX'.'
+ BMPDIR←GetBmpDir
+ TOPIC

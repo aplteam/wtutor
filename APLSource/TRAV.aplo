@@ -1,0 +1,4 @@
+ {TREE}←(JOIN TRAV FUNC)NODE;WN  ⍝ Traverse object tree.
+ TREE←FUNC NODE                  ⍝ Apply FUNCtion to this object.
+ →(⍴WN←⎕WN NODE)↓0               ⍝ Finished if no children.
+ TREE JOIN←(JOIN TRAV FUNC)¨WN   ⍝ JOIN parent to children.

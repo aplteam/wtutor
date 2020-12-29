@@ -1,0 +1,5 @@
+ MSG←SHOWDAY MSG;range;even
+ range←MSG[3]+0,⍳-/MSG[4 3]
+ even←range=2×⌊range÷2
+ MSG[5]←⊂even/range  ⍝ even dates in range
+ DISPLAY MSG

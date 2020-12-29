@@ -1,0 +1,7 @@
+ LOWER←{
+⍝ Converts upper-case alphabetics to lower-case
+     txt←⍵
+     0=+/bool←txt∊⎕A:txt
+     (bool/txt)←⎕AV[(⎕AV⍳bool/txt)-48]
+     txt
+ }

@@ -1,0 +1,4 @@
+ SHOW_HELP;SINK
+ 'Help'⎕WS'VISIBLE' 1
+ SINK←⎕DQ'Help'
+ 'Help'⎕WS'VISIBLE' 0

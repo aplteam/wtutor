@@ -1,0 +1,9 @@
+ R←QUIT MSG
+ ⎕EX'Tutor.T'
+ ⎕EX¨(⎕WN'.')~'Topics' 'Tutor'
+ 'Topics'⎕WS('Visible' 1)('Active' 1)
+ 'Tutor'⎕WS('Visible' 0)('Active' 0)
+ R←'Close'≢2⊃MSG ⍝ Prevent Tutor from being closed by default action
+ 2 ⎕NQ Topics.List'GotFocus'
+⍝ SetFocusTo Topics.List(Topics.List.SelItems⍳1)
+⍝Done

@@ -1,0 +1,7 @@
+ DRAG MSG;Y;X;TXT
+ :With ⊃MSG
+     Y←2++/ThumbRect[1 3]
+     X←ThumbRect[2]+⌊0.5×ThumbRect[4]
+     TXT←⍕¯1↑MSG
+     'T'⎕WC'Text'TXT(Y X)('HAlign' 1)('VAlign' 4)('FCol' 255 255 0)
+ :EndWith

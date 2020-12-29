@@ -1,0 +1,3 @@
+ r←GetBmpDir
+ r←2 ⎕NQ'.' 'GetEnvironment' 'Dyalog'
+ r,←'\ws\'

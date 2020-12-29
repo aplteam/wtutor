@@ -1,0 +1,4 @@
+ MSG←WIZ1 MSG
+⍝ Disable Back button
+ →('S.P2'≢(⍕⊃MSG)⎕WG'PageActive')/0
+ MSG[3]←0

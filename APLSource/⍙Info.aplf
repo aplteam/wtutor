@@ -1,0 +1,8 @@
+ ⍙Info
+ ⎕←{⍵↑'--- WTUTOR ',⍵⍴'-'}⎕PW-1
+ ⎕←' * The current directory is ',⊃1 ⎕NPARTS''
+ ⎕←' * WSID is ',⎕WSID
+ ⎕←'For more information execute:'
+ ⎕←'      )ED #.⍙ReadMe'
+ ⎕←'For getting the data into the workspace execute:'
+ ⎕←'      ⍙ReadWTUTOR 1'

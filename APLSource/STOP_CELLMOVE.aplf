@@ -1,0 +1,2 @@
+ R←STOP_CELLMOVE MSG
+ R←∧/1≠MSG[3 4]

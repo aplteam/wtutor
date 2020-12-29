@@ -1,0 +1,5 @@
+ R←{CAPTION}YESNO QUESTION;MBOX
+⍝ Prompts user with a QUESTION, returns 1 for yes, 0 for no
+ :If 0=⎕NC'CAPTION' ⋄ CAPTION←'' ⋄ :EndIf
+ 'MBOX'⎕WC'MSGBOX'CAPTION QUESTION'QUERY'('EVENT'(61 62)1)
+ R←61=2⊃MBOX.Wait

@@ -1,0 +1,8 @@
+ On9999InFilter←{
+     ref←⊃⍵
+     list←LOWER¨∆TOPICS
+     searchFor←LOWER ref.Text
+     bool←∨/¨searchFor∘⍷¨list
+     ref.##.List.Items←GetTOC bool
+     0
+ }

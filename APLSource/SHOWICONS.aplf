@@ -1,0 +1,12 @@
+ BITS SHOWICONS MASK;ICONS;ROWS;COLS;POS;SIZE;TEST;N
+ ICONS←(⊂'Icon'),∘⍕¨⍳N←⍴BITS
+ ⎕SHADOW↑ICONS
+ ICONS ⎕WC¨(⊂⊂'ICON'),¨(⊂¨(⊂⊂'Bits'),∘⊂¨BITS),¨(⊂⊂'CMap'CMAP),¨(⊂¨(⊂⊂'Mask'),∘⊂¨MASK)
+ ROWS←⌈N*0.5
+ COLS←⌈N÷ROWS
+ SIZE←50×ROWS,COLS
+ 'TEST'⎕WC'Form' 'Icon Box'(50 10)SIZE('Coord' 'Pixel')
+ POS←↑N↑,(10+50×¯1+⍳ROWS)∘.,(10+50×¯1+⍳COLS)
+ IMAGES←(⊂'TEST.I'),∘⍕¨⍳N
+ IMAGES ⎕WC¨↓⍉↑(N⍴⊂'Image')(↓POS)((⊂⊂'Picture'),∘⊂¨ICONS)(N⍴⊂'Dragable' 2)
+ ⎕DQ'TEST'

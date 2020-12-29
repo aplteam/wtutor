@@ -1,0 +1,13 @@
+ bool←⍙YesOrNo question;answer;flag
+ flag←0
+ question←'*** ',question,'? (y/n) '
+ :Repeat
+     answer←⍞,0/⍞←question
+     answer←question{(a w)←(⌈/⊃∘⍴¨⍺ ⍵)↑¨⍺ ⍵ ⋄ answer↓⍨+/∧\a=w}answer
+     :If 1=≢answer
+     :AndIf answer∊'YynN'
+         flag←1
+         bool←answer∊'Yy'
+     :EndIf
+ :Until flag
+⍝Done

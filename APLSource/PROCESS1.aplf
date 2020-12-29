@@ -1,0 +1,9 @@
+ PROCESS1;X;I
+⍝ Simulates a time-consuming process
+ 'F.S.P'⎕WC'ProgressBar'('Limits' 0 10)
+ 1 ⎕NQ'.' 'Flush'
+ :For I :In ⍳10
+     ⎕DL 0.15
+     F.S.P.Thumb←I
+ :EndFor
+ ⎕EX'F.S.P'

@@ -1,0 +1,3 @@
+ LAB READOUT MSG;Thumb
+ Thumb←4⊃MSG                   ⍝ Position of thumb
+ LAB ⎕WS'Value'Thumb           ⍝ Display in label LAB

@@ -1,0 +1,4 @@
+ MSG←SPIN_FMT MSG
+ :If 0>MSG[3]                         ⍝ Do nothing if Positive
+     MSG[4]←⊂,'M<(>N<)>I4'⎕FMT MSG[3] ⍝ Format if negative
+ :EndIf

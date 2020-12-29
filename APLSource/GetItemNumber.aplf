@@ -1,0 +1,6 @@
+ GetItemNumber←{
+     searchFor←{⍵↓⍨1+⍵⍳'.'}⍵
+     searchFor←{⍵/⍨⌽~2>+\' '=⌽⍵}searchFor
+     searchFor←{⍵↓⍨-+/∧\' '=⌽⍵}searchFor
+     1⍳⍨∨/¨searchFor∘⍷¨∆TOPICS
+ }

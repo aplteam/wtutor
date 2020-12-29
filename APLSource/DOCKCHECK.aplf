@@ -1,0 +1,5 @@
+ MSG←DOCKCHECK MSG
+⍝ Allow docking along Top and Bottom edges only
+ :If MSG[4]∊'Left' 'Right'
+     MSG←0
+ :EndIf

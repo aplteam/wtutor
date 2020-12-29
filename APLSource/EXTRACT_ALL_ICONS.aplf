@@ -1,0 +1,29 @@
+ EXTRACT_ALL_ICONS FILE;I;NAME;ICONS;ROWS;COLS;POS;SIZE;TEST;N;IMAGES
+ ⍝ Displays all icons from a .DLL or .EXE
+ I←0
+ ICONS←0⍴⊂''
+ 'TEST'⎕WC'Form'FILE(0 0)('OnTop' 1)('Coord' 'Pixel')
+ 'TEST.T1'⎕WC'Text' 'Extracting icons ...'(10 10)
+ 'TEST.T2'⎕WC'Text' '0'(10 150)
+ 2 ⎕NQ'.' 'Flush'
+ :Trap 0
+     :Repeat
+         NAME←'TEST.Icon',⍕I
+         NAME ⎕WC'Icon'(FILE(-I))
+         ICONS,←⊂NAME
+         'TEST.T2'⎕WS'Text'(⍕I)
+         I←I+1
+     :EndRepeat
+ :EndTrap
+ :If 0<N←⍴ICONS
+ :AndIf 9=⎕NC'TEST'
+     ⎕EX↑'Text'⎕WN'TEST'
+     ROWS←⌈N*0.5
+     COLS←⌈N÷ROWS
+     SIZE←10+40×ROWS,COLS
+     'TEST'⎕WS'Size'SIZE
+     POS←↑N↑,(10+40×¯1+⍳ROWS)∘.,(10+40×¯1+⍳COLS)
+     IMAGES←(⊂'TEST.I'),∘⍕¨⍳N
+     IMAGES ⎕WC¨↓⍉↑(N⍴⊂'Image')(↓POS)((⊂⊂'Picture'),∘⊂¨ICONS)(N⍴⊂'Dragable' 2)
+     ⎕DQ'TEST'
+ :EndIf

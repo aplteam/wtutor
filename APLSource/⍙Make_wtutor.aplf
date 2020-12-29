@@ -1,0 +1,13 @@
+ ⍙Make_wtutor flag
+⍝ Create wtutor.dws from the current workspace.
+ :If flag   ⍝ Insurance policiy against acciddental call.
+     :If 0=+/⎕NC↑'∆TOPICS' '∆BOOKS'
+         ⎕←'Main variables missing: ∆BOOKS and ∆TOPICS...'
+     :Else
+         ⎕WSID←'wtutor'
+         ⍙Reset
+         ⎕EX'⍙'⎕NL 3
+         ⎕←'Now check and then issue:'
+         ⎕←'      )SAVE'
+     :EndIf
+ :EndIf

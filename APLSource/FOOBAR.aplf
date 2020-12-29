@@ -1,0 +1,11 @@
+ FOOBAR;I
+ I←0
+ :Trap 0
+     :Repeat
+         'TEST.ICO'⎕WC'Icon'('Moricons.dll'(-I))
+         'TEST.T'⎕WC'Text'(⍕I)(20 50)
+         I←I+1
+         ⎕DL 1
+         2 ⎕NQ'.' 'Flush'
+     :EndRepeat
+ :EndTrap

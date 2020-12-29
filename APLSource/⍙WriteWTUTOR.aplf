@@ -1,0 +1,14 @@
+ {r}←⍙WriteWTUTOR flag;tno;list
+ r←⍬
+ :If flag                       ⍝ insurance against accidental calls
+     tno←'wtutor.dcf'⎕FTIE 0    ⍝ For this to work the current dir must point to the project folder!
+     ∆TOPICS ⎕FREPLACE tno 1
+     ∆BOOKS ⎕FREPLACE tno 2
+     list←⎕NL 2
+     list←' '~¨⍨↓(list[;⎕IO]='∆')⌿list
+     list~←'∆BOOKS' '∆TOPICS'
+     list ⎕FREPLACE tno 3
+     (⍎¨list)⎕FREPLACE tno 4
+     ⎕FUNTIE tno
+ :EndIf
+⍝Done

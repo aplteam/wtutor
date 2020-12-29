@@ -1,0 +1,6 @@
+ N JOIN M;P1;P2
+ P1←N⊃∆BOOK
+ P2←M⊃∆BOOK
+ P1←((⊃⍴P1),76)↑P1
+ P2←((⊃⍴P2),76)↑P2
+ ∆BOOK[N]←⊂P1,[1]P2

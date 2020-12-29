@@ -1,0 +1,5 @@
+ MSG←UPPER MSG;I
+⍝ Converts lower-case alphabetics to upper-case
+ I←'abcdefghijklmnopqrstuvwxyz'⍳3⊃MSG
+ →(I>26)/0
+ MSG[3]←I⊃⎕A

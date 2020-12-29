@@ -1,0 +1,17 @@
+ {r}←EditLesson(topic row);book;temp;name
+ r←⍬
+ book←topic⊃∆BOOKS
+ temp←⍎'Lesson'⎕NS''
+ name←'_',⍕row
+ ⍎'temp.',name,'←row⊃book'
+ temp.⎕ED⍠('EditName' 'Disallow')⊣name
+ :If 0=⍴({⎕ML←3 ⋄ ∊⍵}temp.⍎name)~' '
+     ⎕←'Empty, no action taken!'
+ :Else
+     (row⊃book)←temp.⍎name
+     (topic⊃∆BOOKS)←book
+     :If 0<⎕SE.⎕NC'acre'
+         {}⎕SE.UCMD'acre.setchanged #.∆BOOKS'
+     :EndIf
+ :EndIf
+⍝Done

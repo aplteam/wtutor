@@ -1,0 +1,7 @@
+ R←ADDROW MSG;CELL
+ R←0
+ MSG,←⊂⍕3⊃MSG                  ⍝ Add new row title
+ 2 ⎕NQ MSG
+ CELL←(3⊃MSG),2⊃(⊃MSG).CurCell
+ (⊃MSG).CellMove CELL   ⍝ Move to new row
+ RECALC MSG

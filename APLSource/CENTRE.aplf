@@ -1,0 +1,4 @@
+ R←W CENTRE TEXT;X
+⍝Centre vector or matrix TEXT in W columns
+ TEXT←((¯1↓⍴TEXT),W)↑TEXT
+ R←(⌈0.5×(+/∧\X)-+/∧\⌽X←TEXT=' ')⌽TEXT

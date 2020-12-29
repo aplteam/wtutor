@@ -1,0 +1,3 @@
+ r←GetSystemMetrics Value;∆GetSystemMetrics
+ '∆GetSystemMetrics'⎕NA'I4 USER32.C32|GetSystemMetrics I4'
+ r←∆GetSystemMetrics Value

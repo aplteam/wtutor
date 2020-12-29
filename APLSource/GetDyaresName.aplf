@@ -1,0 +1,6 @@
+ r←GetDyaresName
+ r←'dyares'
+ r,←'.'~⍨{⍵/⍨2>+\'.'=⍵}2⊃# ⎕WG'APLVersion'
+ r,←'_'
+ r,←(1+'64'≡¯2↑1⊃# ⎕WG'APLVersion')⊃'32' '64'
+ r,←'.dll'

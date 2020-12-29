@@ -1,0 +1,13 @@
+ ⍙Reset;list
+⍝ Delete all variables that are not needed to run WTUTOR
+ list←⎕NL 2
+ list←(list[;⎕IO]≠'∆')⌿list
+ ⎕EX list
+ ⎕LX←'#.LX'
+ ⎕IO←1
+ ⎕ML←1
+ ⎕WX←1
+ ⎕DIV←1
+ ⎕EX'quadVars'      ⍝ acre variable
+ ⎕EX'AcreConfig'    ⍝ acre namespace
+ ∆POSN←⍬ ⍬

@@ -1,0 +1,11 @@
+ OnSelectForEdit←{
+     ref←⍎'Topics.List'
+     0=+/ref.SelItems:⍬ ⍝ Yes, that happens every now and then! Kai;
+     row←ref.SelItems⍳1
+     _←EditBook row
+     BOOKS≡∆BOOKS:0
+     0='Save changes'YESNO'Would you like to save ∆BOOKS, ∆TOPICS etc. on file?':0
+     _←⍙WriteWTUTOR 1
+     ⎕THIS.BOOKS←∆BOOKS
+     ⍬
+ }

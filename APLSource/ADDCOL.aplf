@@ -1,0 +1,7 @@
+ R←ADDCOL MSG;CELL
+ R←0
+ MSG,←(⍕3⊃MSG)40              ⍝ Add new column title and width
+ 2 ⎕NQ MSG
+ CELL←(⊃(⊃MSG).CurCell),3⊃MSG
+ (⊃MSG).CellMove CELL    ⍝ Move to new column
+ RECALC MSG

@@ -1,0 +1,14 @@
+ MSG←DOCKSIZE MSG;REGION
+⍝ Define size of docking region
+ REGION←7⊃MSG
+ :Select 4⊃MSG
+ :Case 'Top'
+     REGION[3]←60 ⍝ 60% high
+ :Case 'Botttom'
+     REGION[1 3]←60 40 ⍝ 40% high
+ :Case 'Left'
+     REGION[4]←70 ⍝ 70% wide
+ :Case 'Right'
+     REGION[2 4]←50 ⍝ 50% wide
+ :EndSelect
+ MSG[7]←⊂REGION

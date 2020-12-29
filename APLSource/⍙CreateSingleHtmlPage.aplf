@@ -1,0 +1,39 @@
+ ⍙CreateSingleHtmlPage;html;filename;i;html2;lessons;lesson;j;css
+⍝ Call this function if you want to create a single document with all topics and all lessons,
+⍝ for example for proof-reading. The name of the HTML file will be printed to the session.
+ html←''
+ html,←⊂'<!DOCTYPE html>'
+ html,←⊂'<html lang="en">'
+ html,←⊂'<head>'
+ html,←⊂'<title>WTUTOR lessons</title>'
+ html,←⊂'<meta charset="utf-8"/>'
+ css←''
+ css,←⊂'body {font-family:"APL385 Unicode"; font-size:100%;}'
+ css,←⊂'h3 {font-size:110%;}'
+ css,←⊂'h2 {font-size:130%;}'
+ css,←⊂'h1 {font-size:160%;}'
+ html,←(⊂'<style>'),css,(⊂'</style')
+ html,←⊂'</head>'
+ html,←⊂'<body>'
+ html,←⊂'<h1>WTUTOR lessons</h1>'
+ html,←⊂'</div>'
+ filename←(739⌶0),'/wtutor-lessons.html'
+ :For i :In ⍳≢∆TOPICS
+     html,←⊂'<h2>',(i⊃∆TOPICS),'</h2>'
+     lessons←i⊃∆BOOKS
+     :For j :In ⍳≢lessons
+         html2←''
+         lesson←↓j⊃lessons
+         html2,←⊂'<h3>Lesson ',(⍕j),'</h3>'
+         (1⊃lesson)←'<pre><code>',1⊃lesson
+         ((≢lesson)⊃lesson),←'</code></pre>'
+         html2,←lesson
+         html,←html2
+     :EndFor
+ :EndFor
+ html,←⊂'<footer><hr><p style="font-size:x-small;">WTUTOR lesson ⋄ printed at ',({(1⊃⍵),'-',(2⊃⍵),'-',(3⊃⍵),'  ',(4⊃⍵),':',(5⊃⍵),':',(6⊃⍵)}⍕¨1 ⎕DT ⎕TS),'</p></footer>'
+ html,←'</body>' '</html>'
+ html←,¨html
+ (⊂html)⎕NPUT filename 1
+ ⎕←'HTML file created: "',filename,'"'
+⍝Done
