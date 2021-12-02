@@ -1,7 +1,7 @@
 # Notes for developers
 
-The workspace wtutor.dws allows a user to inspect certain topics and go through a sequence of 
-lessons  for each of these topics.
+The workspace wtutor.dws allows a Dyalog user to inspect certain topics and go through a sequence
+of lessons  for each of these GUI-related topics.
 
 The workspace "Development.dws" is used for development and editing topics. The workspace 
 wtutor.dws is assembled from within Development by calling the function ⍙Make_wtutor.
