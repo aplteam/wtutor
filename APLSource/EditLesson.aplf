@@ -10,8 +10,6 @@
  :Else
      (row⊃book)←temp.⍎name
      (topic⊃∆BOOKS)←book
-     :If 0<⎕SE.⎕NC'acre'
-         {}⎕SE.UCMD'acre.setchanged #.∆BOOKS'
-     :EndIf
+     ⎕SE.Link.Add #.∆BOOKS
  :EndIf
 ⍝Done

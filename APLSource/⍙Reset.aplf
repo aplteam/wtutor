@@ -8,6 +8,6 @@
  ⎕ML←1
  ⎕WX←1
  ⎕DIV←1
- ⎕EX'quadVars'      ⍝ acre variable
- ⎕EX'AcreConfig'    ⍝ acre namespace
+ ⎕EX'quadVars'
+ ⎕EX'CiderConfig'
  ∆POSN←⍬ ⍬

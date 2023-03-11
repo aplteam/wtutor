@@ -1,6 +1,6 @@
  ⍙Info
  ⎕←{⍵↑'--- WTUTOR ',⍵⍴'-'}⎕PW-1
- {}⎕SE.UCMD'cd ',AcreConfig.ProjectFolder
+ {}⎕SE.UCMD'cd ',CiderConfig.HOME
  ⎕←' * The current directory is ',⊃1 ⎕NPARTS''
  ⎕WSID←'Development.dws'
  ⎕LX←'#.⍙Info'
